@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const Job = ({ job }) => {
   const {
+    id,
     logo,
     job_title,
     company_name,
@@ -36,7 +37,7 @@ const Job = ({ job }) => {
           <p className="  font-semibold">{salary}</p>
         </div>
       </div>
-      <Link>
+      <Link to={`/job/${id}`}>
         <button className="bg-[#9873FF] px-5 py-3 rounded text-white text-[20px] font-extrabold">
           View Details
         </button>
