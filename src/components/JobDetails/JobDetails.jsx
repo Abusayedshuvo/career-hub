@@ -3,11 +3,15 @@ import { GrLocation } from "react-icons/gr";
 import { IoCalendarOutline } from "react-icons/io5";
 import { MdOutlineLocalPhone, MdOutlineMailOutline } from "react-icons/md";
 import { Link, useLoaderData, useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const JobDetails = () => {
   const jobs = useLoaderData();
   const { id } = useParams();
   const job = jobs.find((job) => job.id === parseInt(id));
+  const notify = () => toast("Wow so easy!");
+
   const {
     job_description,
     job_responsibility,
@@ -89,10 +93,14 @@ const JobDetails = () => {
             </div>
           </div>
           <div className="mt-6">
-            <Link to="/">
-              <button className="bg-[#9873FF] px-5 py-3 rounded-lg text-white text-[20px] font-extrabold w-full">
+            <Link>
+              <button
+                onClick={notify}
+                className="bg-[#9873FF] px-5 py-3 rounded-lg text-white text-[20px] font-extrabold w-full"
+              >
                 Apply Now
               </button>
+              <ToastContainer />
             </Link>
           </div>
         </div>
