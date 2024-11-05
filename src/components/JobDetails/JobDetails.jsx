@@ -5,12 +5,16 @@ import { MdOutlineLocalPhone, MdOutlineMailOutline } from "react-icons/md";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { saveJob } from "../../utility/localstorage";
 
 const JobDetails = () => {
   const jobs = useLoaderData();
   const { id } = useParams();
   const job = jobs.find((job) => job.id === parseInt(id));
-  const notify = () => toast("Wow so easy!");
+  const handleApplyJob = () => {
+    saveJob(parseInt(id));
+    toast("Applied Jobs Success");
+  };
 
   const {
     job_description,
@@ -95,7 +99,7 @@ const JobDetails = () => {
           <div className="mt-6">
             <Link>
               <button
-                onClick={notify}
+                onClick={handleApplyJob}
                 className="bg-[#9873FF] px-5 py-3 rounded-lg text-white text-[20px] font-extrabold w-full"
               >
                 Apply Now
