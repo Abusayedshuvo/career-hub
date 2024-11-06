@@ -2,9 +2,9 @@ import bannerImg from "../../assets/images/user.png";
 
 const Banner = () => {
   return (
-    <div className="grid xl:grid-cols-2 px-72">
+    <div className="grid xl:grid-cols-2 px-20 2xl:px-40 3xl:px-72">
       <div className="my-auto">
-        <h1 className="text-[80px] font-extrabold leading-[85px] mb-5">
+        <h1 className="text-7xl 3xl:text-[80px] font-extrabold leading-[85px] mb-5">
           One Step Closer To Your <br />
           <span className="text-[#7E90FE]"> Dream Job </span>
         </h1>

@@ -10,7 +10,7 @@ const JobCategory = () => {
   }, []);
 
   return (
-    <div className="mt-32 2xl:px-[300px]">
+    <div className="mt-32 px-20 2xl:px-40 3xl:px-72">
       <div className="text-center mb-8">
         <p className="text-5xl font-extrabold mb-4">Job Category List</p>
         <p>
